@@ -1,24 +1,13 @@
-// const getAgeByNumber = (input) => {
-//   return isNumberLessOrEqual10(input);
-// };
-
 const getAgeByNumber = (input) => {
   isInputNumber(input);
   isNumberHigherThanZero(input);
   if (input < 10) {
     return "young";
-  } else if (10 <= input <= 50) {
+  } else if (input <= 50) {
     return "adult";
   }
   return "old";
 };
-
-// const isNumberLessThan50 = (input) => {
-//   if (input < 50) {
-//     return "adult";
-//   }
-//   return "old";
-// };
 
 const isInputNumber = (input) => {
   if (typeof input !== "number" && isNaN(input)) {
