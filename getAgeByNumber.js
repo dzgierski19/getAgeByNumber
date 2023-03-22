@@ -1,13 +1,25 @@
-const GET_AGE_BY_NUMBER = (number) => {
-  var age = null;
-
-  if (number < 10) {
-    age = "young";
-  } else if (number > 10 && number < 50) {
-    age = "adult";
-  } else {
-    age = "old";
+const getAgeByNumber = (input) => {
+  isInputNumber(input);
+  isNumberHigherThanZero(input);
+  if (input < 10) {
+    return "young";
+  } else if (input <= 50) {
+    return "adult";
   }
-
-  console.log(age);
+  return "old";
 };
+
+const isInputNumber = (input) => {
+  if (typeof input !== "number" && isNaN(input)) {
+    throw new Error("You must type a number");
+  }
+};
+
+const isNumberHigherThanZero = (input) => {
+  if (input <= 0) {
+    throw new Error("You must type number higher than 0");
+  }
+};
+
+const result1 = getAgeByNumber(1.5);
+console.log(result1);
